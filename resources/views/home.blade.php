@@ -303,6 +303,15 @@
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>Usuarios</span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.users.index') }}" class="paginacion"><i class="fa fa-circle-o"></i>Control Usuarios</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Publicaciones</span>
             <span class="pull-right-container">

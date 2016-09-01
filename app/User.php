@@ -34,5 +34,33 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
-    
+    public static function filterAndPaginate($nombres)
+    {
+        $users = \DB::table('users')
+            ->join('unidads', 'users.id_unidad', '=', 'unidads.id')
+            ->join('estados', 'users.id_estado', '=', 'estados.id')
+            ->where('users.nombre', 'ilike', "%$nombres%")->orWhere('users.apellidoP', 'ilike', "%$nombres%")->orWhere('users.apellidoM', 'ilike', "%$nombres%")
+            ->select('users.id', 'users.nombre', 'users.apellidoP', 'users.apellidoM', 'users.ci','users.email', 'users.id_estado', 'unidads.unidad', 'estados.nombre as nombre_estado')
+            ->paginate(8);
+        return $users;
+    }
+
+    public function InsertarRoles($id_user, $roles)
+    {
+        foreach ($roles as $rol)
+        {
+            $id_rol = \DB::table('roles')->where('name', $rol)->pluck('id');
+            \DB::table('role_user')->insert(array(
+                'user_id' => $id_user,
+                'role_id' => $id_rol[0]
+            ));
+        }
+    }
+
+    public function EditarRoles($id_user, $roles)
+    {
+        \DB::table('role_user')->where('user_id', '=', $id_user)->delete();
+        $this->InsertarRoles($id_user, $roles);
+    }
+
 }

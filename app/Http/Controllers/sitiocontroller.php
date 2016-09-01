@@ -51,6 +51,7 @@ class sitiocontroller extends Controller
         for ($i=0; $i < sizeof($pubgob) ; $i++) { 
             $pubgob[$i]['id']=$this->encriptar($pubgob[$i]['id']);
         }
+        
         return view('paginas.paginas',['sitios'=>$sitios,'pubgob'=>$pubgob]);
     }
 
