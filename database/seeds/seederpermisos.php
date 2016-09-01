@@ -11,20 +11,35 @@ class seederpermisos extends Seeder
      */
     public function run()
     {
-        Permission::Create([
-	        'name'=>'permiso1',
-	        'display_name'=>'permiso1',
-	        'description'=>'permiso1',
+		Permission::Create([
+			'name'=>'Editar',
+			'display_name'=>'Editar',
+			'description'=>'Editar'
 		]);
 		Permission::Create([
-	        'name'=>'permiso2',
-	        'display_name'=>'permiso2',
-	        'description'=>'permiso2',
+			'name'=>'Baja',
+			'display_name'=>'Baja',
+			'description'=>'Baja'
 		]);
 		Permission::Create([
-	        'name'=>'permiso3',
-	        'display_name'=>'permiso3',
-	        'description'=>'permiso3',
+			'name'=>'Habilitar',
+			'display_name'=>'Habilitar',
+			'description'=>'Habilitar'
+		]);
+		Permission::Create([
+			'name'=>'Deshabilitar',
+			'display_name'=>'Deshabilitar',
+			'description'=>'Deshabilitar'
+		]);
+		Permission::Create([
+			'name'=>'Publicar',
+			'display_name'=>'Publicar',
+			'description'=>'Publicar'
+		]);
+		Permission::Create([
+			'name'=>'NoPublicar',
+			'display_name'=>'NoPublicar',
+			'description'=>'NoPublicar'
 		]);
     }
 }

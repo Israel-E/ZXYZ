@@ -54,3 +54,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 route::get('ss/{id}','sitiocontroller@getimgs');
 route::get('sss/{id}','sitiocontroller@getimgs2');
+
+//usuarios
+Route::group(['prefix' => 'admin'], function() {
+	Route::get('users/deshabilitar/{id}', ['uses' => 'UsersController@setDeshabilitar', 'as' => 'deshabilitar_usuario']);
+	Route::get('users/habilitar/{id}', ['uses' => 'UsersController@setHabilitar', 'as' => 'habilitar_usuario']);
+	Route::resource('users', 'UsersController');
+});

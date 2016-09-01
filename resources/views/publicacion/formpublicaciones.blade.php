@@ -49,12 +49,12 @@
     <div class="col-lg-12">
       <label>Subir Videos</label>
     </div>
-    <div id="contenedor">
-      <div>
-        <input type="text" id="video" class="form-control" name = "video[]" placeholder="Url del video">    
-        <div id="vista-previa-video"></div>
+      <div id="contenedor">
+          <div>
+              <input type="text" id="video" class="form-control previsualizar" name = "video[]" placeholder="Url del video">
+              <div id="vista-previa-video0" class="eliminar-imagen"></div>
+          </div>
       </div>
-    </div>
   </div>
   <a id="agregarCampo" class="btn btn-success">Agregar URL del Video</a>
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -70,7 +70,7 @@
 </script>
 <script>
 
-
+    var z=1;
      $(function(){   
        $("#file").on("change", function(){
            /* Limpiar vista previa */
@@ -99,51 +99,59 @@
                }
            }
        });
-        /*
-        $( "#video" ).change(function() {
-          //url = $("#video").val();
-          url = document.getElementById('video').files
-          alert(url.length);/*
-          var aux = "0"
-          for (var i = 0; i< url.length; i++) 
-          {
-            var caracter = url.charAt(i);
-            if( caracter == "=") 
-            {
-              aux = url.substring((i+1), (url.length));
-            }  
-          }
-          if(aux != "0")
-          {
-            var url_aux = "http://img.youtube.com/vi/" + aux + "/0.jpg"
-            $("#vista-previa-video").append("<img src="+url_aux+" width='250' height='250'>");
-          }
-        });*/
 
-        $(document).ready(function () {
-            var contenedor = $("#contenedor");
-            var AddButton = $("#agregarCampo");
+         $("body").on("change",".previsualizar", function (e) {
+             var archivo = document.getElementsByName('video[]');
+             //alert(archivo.length);
+             for(var j = 0; j<archivo.length; j++)
+             {
+                 url = archivo[j].value;
+                 var aux = "0";
+                 for (var i = 0; i< url.length; i++)
+                 {
+                     var caracter = url.charAt(i);
+                     if( caracter == "=")
+                     {
+                         aux = url.substring((i+1), (url.length));
+                     }
+                 }
+                 if(aux != "0")
+                 {
+                     $( "#imagen" + j).remove();
+                     var url_aux = "http://img.youtube.com/vi/" + aux + "/0.jpg";
+                     //alert(url_aux);
+                     $("#vista-previa-video"+j).append("<img src="+url_aux+" width='250' height='250' id='imagen" + j + "'>");
+                 }
+             }
 
-            var x = $("#contenedor div").length + 1;
-            var FieldCount = 1;
-            $(AddButton).click(function () {
-                FieldCount++;
-                //$(contenedor).append('<div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="fecha">Fecha</label><input class="form-control" id="fecha_' + FieldCount + '" name="fecha_' + FieldCount + '" type="date"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_ent">Hora entrada</label><input type="time" name="hora_ent_' + FieldCount + '" class="form-control" id="hora_ent_' + FieldCount + '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_sal">Hora salida</label><input type="time" name="hora_sal_' + FieldCount + '" class="form-control" id="hora_sal_' + FieldCount+ '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="ubicacion">Ubicación</label><textarea class="form-control" placeholder="Por favor introduzca la ubicación" rows="2" id="ubicacion_' + FieldCount + '" name="ubicacion_' + FieldCount + '" cols="50"></textarea></div>');
-                $(contenedor).append('<div><input type="text" id="video" class="form-control" name = "video[]" placeholder="Url del video"><div id="vista-previa-video"></div><a href="#" class="eliminar">&times;</a></div>');
-                //console.log(FieldCount);
-            });
-            return false;
-        });
+         });
 
-        $("body").on("click",".eliminar", function (e) {
-            //if(x>1)
-            {
-                $(this).parent('div').remove();
-                //$( ".contenedor" ).remove();
-            }
-            return false;
-        });
-           
+         $(document).ready(function () {
+             var contenedor = $("#contenedor");
+             var AddButton = $("#agregarCampo");
+             //var z = 1;
+             var x = $("#contenedor div").length + 1;
+             var FieldCount = 1;
+             $(AddButton).click(function () {
+                 FieldCount++;
+                 //$(contenedor).append('<div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="fecha">Fecha</label><input class="form-control" id="fecha_' + FieldCount + '" name="fecha_' + FieldCount + '" type="date"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_ent">Hora entrada</label><input type="time" name="hora_ent_' + FieldCount + '" class="form-control" id="hora_ent_' + FieldCount + '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_sal">Hora salida</label><input type="time" name="hora_sal_' + FieldCount + '" class="form-control" id="hora_sal_' + FieldCount+ '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="ubicacion">Ubicación</label><textarea class="form-control" placeholder="Por favor introduzca la ubicación" rows="2" id="ubicacion_' + FieldCount + '" name="ubicacion_' + FieldCount + '" cols="50"></textarea></div>');
+                 $(contenedor).append('<div><input type="text" id="video" class="form-control previsualizar" name = "video[]" placeholder="Url del video"><div id="vista-previa-video' + z + '"></div><a href="#" class="eliminar">&times;</a></div>');
+                 //console.log(FieldCount);
+                 z++;
+             });
+             return false;
+         });
+
+         $("body").on("click",".eliminar", function (e) {
+             //if(x>1)
+             {
+                 $(this).parent('div').remove();
+                 z--;
+                 //$( ".contenedor" ).remove();
+             }
+             return false;
+         });
+
        // Interceptamos el evento submit
     $('#formulario').submit(function() {
         //console.log($(this).serialize())

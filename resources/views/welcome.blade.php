@@ -8,7 +8,9 @@
     .project-description > p{
         color: #fff !important;
     }
+
 </style>
+
 <div class="todo">
     @include('extends.nav')
 </div>
@@ -39,6 +41,19 @@
                     <li><a href="#" class="trigger">Mas...</a></li>
                 </ul>
             </div>
+            <!--
+            <div class="nav-collapse collapse pull-right">
+                <ul class="nav" id="top-navigation">
+                    <li class="active"><a href="#home">Inicio</a></li>
+                    <li><a href="#service">Institucion</a></li>
+                    <li><a href="#portfolio">Auditoria Interna</a></li>
+                    <li><a href="#about">Juridica</a></li>
+                    <li><a href="#clients">Unidad de Transparencia</a></li>
+                    <li><a href="#price">Comunicacion</a></li>
+                    <li><a href="#contact">Servicicios departamentales</a></li>
+                    <li><a href="#" class="trigger">Mas...</a></li>
+                </ul>
+            </div>-->
             <!-- End main navigation -->
         </div>
     </div>
@@ -616,10 +631,13 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="about-text centered">
                     <h3>About Us</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
                 </div>
+                -->
+                <!--
                 <h3>Skills</h3>
                 <div class="row-fluid">
                     <div class="span6">
@@ -650,6 +668,7 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
         <!-- About us section end -->
@@ -844,14 +863,38 @@
             <div class="section secondary-section">
                 <div class="container">
                     <div class="title">
-                        <h1>Contact Us</h1>
+                        <h1>Contactos</h1>
                         <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
                     </div>
                 </div>
-                <div class="map-wrapper">
+                <div>
+                    <!--
                     <div class="map-canvas" id="map-canvas">Loading map...</div>
-                    <div class="container">
+                    -->
+                    <div class="">
                         <div class="row-fluid">
+                            <ul class="thumbnails row">
+                                <li class="span6 mix web">
+                                    <div class="span9 center contact-info">
+                                        <p></p><p></p>
+                                        <p>Dirección: Plaza Principal 10 de Noviembre</p>
+                                        <p>Teléfono: 62-29295 - 62-29292</p>
+                                        <p>Teléfono fax: 62-29295 - 62-29292</p>
+                                        <p>Casilla de correo: 225</p>
+                                    </div>
+                                </li>
+                                <li class="span6 mix web">
+                                    <div class="">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1879.441551520737!2d-65.75490941754455!3d-19.589508168666754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f94e7a0fb10e69%3A0x4e87e73bb79e4ff7!2sPalacio+de+la+Gobernaci%C3%B3n+de+Potos%C3%AD%2C+Cobija%2C+Villa+Imperial+de+Potos%C3%AD%2C+Bolivia!5e0!3m2!1ses!2ses!4v1472698365958" width="460" height="320" frameborder="0" style="border:5px dotted #0167b8" allowfullscreen></iframe>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--
+                            <div class="center">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1879.441551520737!2d-65.75490941754455!3d-19.589508168666754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f94e7a0fb10e69%3A0x4e87e73bb79e4ff7!2sPalacio+de+la+Gobernaci%C3%B3n+de+Potos%C3%AD%2C+Cobija%2C+Villa+Imperial+de+Potos%C3%AD%2C+Bolivia!5e0!3m2!1ses!2ses!4v1472698365958" width="400" height="300" frameborder="0" style="border:5px dotted #0167b8" allowfullscreen></iframe>
+                            </div>-->
+
+                            <!--
                             <div class="span5 contact-form centered">
                                 <h3>Say Hello</h3>
                                 <div id="successSend" class="alert alert-success invisible">
@@ -883,19 +926,28 @@
                                     </div>
                                 </form>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
                 <div class="container">
+                    <!--
+                    <div class="span9 center contact-info">
+                        <p>Dirección: Plaza Principal 10 de Noviembre</p>
+                        <p class="info-mail">Teléfono: 62-29295 - 62-29292</p>
+                        <p>Teléfono fax: 62-29295 - 62-29292</p>
+                        <p>Casilla de correo: 225</p>
+                    </div>
+                    <!--
                     <div class="span9 center contact-info">
                         <p>123 Fifth Avenue, 12th,Belgrade,SRB 11000</p>
                         <p class="info-mail">ourstudio@somemail.com</p>
                         <p>+11 234 567 890</p>
-                        <p>+11 286 543 850</p>
+                        <p>+11 286 543 850</p>-->
                         <div class="title">
                             <h3>We Are Social</h3>
                         </div>
-                    </div>
+                   <!-- </div>-->
                     <div class="row-fluid centered">
                         <ul class="social">
                             <li>
