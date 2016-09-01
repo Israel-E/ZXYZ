@@ -30,17 +30,17 @@
             </button>
             <!-- Main navigation -->
             <div class="nav-collapse collapse pull-right">
-                <ul class="nav" id="top-navigation">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#service">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#clients">Clients</a></li>
-                    <li><a href="#price">Price</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="trigger">Mas...</a></li>
-                </ul>
-            </div>
+            <ul class="nav" id="top-navigation">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#price">Price</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="trigger">Mas...</a></li>
+            </ul>
+        </div>
             <!--
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav" id="top-navigation">
@@ -867,28 +867,16 @@
                         <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div>
                     <!--
                     <div class="map-canvas" id="map-canvas">Loading map...</div>
                     -->
                     <div class="">
-=======
-                <div class="map-wrapper">
-                    <!--
-                    <div class="map-canvas" id="map-canvas">Loading map...</div>
-                    -->
-                    <div class="container">
->>>>>>> origin/master
                         <div class="row-fluid">
                             <ul class="thumbnails row">
                                 <li class="span6 mix web">
                                     <div class="span9 center contact-info">
-<<<<<<< HEAD
                                         <p></p><p></p>
-=======
-                                        <p></p>
->>>>>>> origin/master
                                         <p>Dirección: Plaza Principal 10 de Noviembre</p>
                                         <p>Teléfono: 62-29295 - 62-29292</p>
                                         <p>Teléfono fax: 62-29295 - 62-29292</p>
@@ -897,11 +885,7 @@
                                 </li>
                                 <li class="span6 mix web">
                                     <div class="">
-<<<<<<< HEAD
                                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1879.441551520737!2d-65.75490941754455!3d-19.589508168666754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f94e7a0fb10e69%3A0x4e87e73bb79e4ff7!2sPalacio+de+la+Gobernaci%C3%B3n+de+Potos%C3%AD%2C+Cobija%2C+Villa+Imperial+de+Potos%C3%AD%2C+Bolivia!5e0!3m2!1ses!2ses!4v1472698365958" width="460" height="320" frameborder="0" style="border:5px dotted #0167b8" allowfullscreen></iframe>
-=======
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1879.441551520737!2d-65.75490941754455!3d-19.589508168666754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f94e7a0fb10e69%3A0x4e87e73bb79e4ff7!2sPalacio+de+la+Gobernaci%C3%B3n+de+Potos%C3%AD%2C+Cobija%2C+Villa+Imperial+de+Potos%C3%AD%2C+Bolivia!5e0!3m2!1ses!2ses!4v1472698365958" width="400" height="300" frameborder="0" style="border:5px dotted #0167b8" allowfullscreen></iframe>
->>>>>>> origin/master
                                     </div>
                                 </li>
                             </ul>
