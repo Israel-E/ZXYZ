@@ -1,4 +1,5 @@
- <style type="text/css">
+
+<style type="text/css">
     .todo{
         position: absolute;
         z-index: 1000;
@@ -23,79 +24,68 @@
                         <h2 class="icon icon-world gapd">Pagina Web GADP</h2>
                         <ul>
                              <li class="icon icon-arrow-left">
-                                <a class="icon icon-shop" href="#">Inicio</a>
+                                 <a class="icon icon-cloud" href="#"> Inicio</a>
                                 <div class="mp-level">
                                     <h2 class="icon icon-shop colorfff">Inicio</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a class="icon icon-diamond" href="#">Noticias Recientes</a>
+                                            <a href="{{ route('construccion_pagina') }}">Noticias Recientes</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-music" href="#">Enlaces</a>
+                                            <a href="{{ route('construccion_pagina') }}">Enlaces</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">Canal Youtube</a>
+                                            <a href="{{ route('construccion_pagina') }}">Canal Youtube</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-display" href="#">Institución</a>
+                                <a class="icon icon-shop" href="#">Institución</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-display">Institución</h2>
+                                    <h2 class="icon icon-shop colorfff">Institución</h2>
                                     <a class="mp-back" href="#">Atrás</a>
                                     <ul>
-                                        <li class="icon icon-arrow-left">
-                                            <a class="icon icon-phone" href="#">Misión-Visión</a>
-                                            <!--
-                                            <div class="mp-level">
-                                                <h2>Mobile Phones</h2>
-                                                <a class="mp-back" href="#">back</a>
-                                                <ul>
-                                                    <li><a href="#">Super Smart Phone</a></li>
-                                                    <li><a href="#">Thin Magic Mobile</a></li>
-                                                    <li><a href="#">Performance Crusher</a></li>
-                                                    <li><a href="#">Futuristic Experience</a></li>
-                                                </ul>
-                                            </div>-->
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Misión-Visión</a>
                                         </li>
-                                        <li class="icon icon-arrow-left">
-                                            <a class="icon icon-tv" href="#">Gobernador</a>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Gobernador</a>
                                         </li>
-                                        <li class="icon icon-arrow-left">
-                                            <a class="icon icon-camera" href="#">Organigrama</a>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Organigrama</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-news" href="#">Auditoría Interna</a>
+                                <a class="icon icon-search" href="#">Auditoría Interna</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-news">Auditoría Interna</h2>
+                                    <h2 class="icon icon-news colorfff">Auditoría Interna</h2>
                                     <a class="mp-back" href="#">Atrás</a>
                                     <ul>
                                         <li class="icon icon-arrow-left">
-                                            <a class="icon icon-phone" href="#">Resumen Ejecutivo 2015</a>
+                                            <a href="#">Resumen Ejecutivo 2015</a>
                                             <div class="mp-level">
                                                 <h2>Resumen Ejecutivo 2015</h2>
                                                 <a class="mp-back" href="#">Atrás</a>
                                                 <ul>
-                                                    <li><a href="#">Poa 2015</a></li>
-                                                    <li><a href="#">Declaración Jurada 2015</a></li>
-                                                    <li><a href="#">Resumen Ejecutivo Poa 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Poa 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Declaración Jurada 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Resumen Ejecutivo Poa 2015</a></li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="icon icon-arrow-left">
-                                            <a class="icon icon-phone" href="#">Resumen Ejecutivo 2016</a>
+                                            <a href="#">Resumen Ejecutivo 2016</a>
                                             <div class="mp-level">
                                                 <h2>Resumen Ejecutivo 2016</h2>
                                                 <a class="mp-back" href="#">Atrás</a>
                                                 <ul>
-                                                    <li><a href="#">Poa 2015</a></li>
-                                                    <li><a href="#">Declaración Jurada 2015</a></li>
-                                                    <li><a href="#">Resumen Ejecutivo Poa 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Poa 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Declaración Jurada 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Resumen Ejecutivo Poa 2015</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -103,22 +93,22 @@
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-shop" href="#">Juridica</a>
+                                <a class="icon icon-note" href="#">Juridica</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-shop">Juridica</h2>
+                                    <h2 class="icon icon-note colorfff">Juridica</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a class="icon icon-t-shirt" href="#">Leyes</a>
+                                            <a href="{{ route('construccion_pagina') }}">Leyes</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-diamond" href="#">Decretos</a>
+                                            <a href="{{ route('construccion_pagina') }}">Decretos</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a class="icon icon-photo" href="#">Unidad de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-news" href="#">Unidad de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transparencia</a>
                                 <div class="mp-level">
@@ -126,43 +116,43 @@
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a class="icon icon-diamond" href="#">POA</a>
+                                            <a href="{{ route('construccion_pagina') }}">POA</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-music" href="#">Rendición de Cuentas</a>
+                                            <a href="{{ route('construccion_pagina') }}">Rendición de Cuentas</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">Convocatorias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Convocatorias</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">Formulario de Sugerencias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Formulario de Sugerencias</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">Nomina de Personal</a>
+                                            <a href="{{ route('construccion_pagina') }}">Nomina de Personal</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a class="icon icon-photo" href="#">Comunicación</a>
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-phone" href="#">Comunicación</a>
                                 <div class="mp-level">
                                     <h2 class="icon icon-shop colorfff">Comunicación</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a class="icon icon-diamond" href="#">Noticias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Noticias</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-music" href="#">Galerias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Galerias</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">Videos</a>
+                                            <a href="{{ route('construccion_pagina') }}">Videos</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a class="icon icon-photo" href="#">Servicios &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-data" href="#">Servicios &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Departamentales</a>
@@ -171,16 +161,16 @@
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a class="icon icon-diamond" href="#">SEDES</a>
+                                            <a href="{{ route('construccion_pagina') }}">SEDES</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-music" href="#">SEDEGES</a>
+                                            <a href="{{ route('construccion_pagina') }}">SEDEGES</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">SEDEDE</a>
+                                            <a href="{{ route('construccion_pagina') }}">SEDEDE</a>
                                         </li>
                                         <li>
-                                            <a class="icon icon-food" href="#">SEDECA</a>
+                                            <a href="{{ route('construccion_pagina') }}">SEDECA</a>
                                         </li>
                                     </ul>
                                 </div>

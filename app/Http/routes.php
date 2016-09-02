@@ -54,6 +54,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 route::get('ss/{id}','sitiocontroller@getimgs');
 route::get('sss/{id}','sitiocontroller@getimgs2');
+//route pagina en construccion
+route::get('construccion', ['as'=>'construccion_pagina', 'uses' => 'ConstruccionController@index']);
 
 //usuarios
 Route::group(['prefix' => 'admin'], function() {

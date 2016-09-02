@@ -29,6 +29,7 @@
                 
             </button>
             <!-- Main navigation -->
+
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav" id="top-navigation">
                     <li class="active"><a href="#home">Home</a></li>
@@ -442,7 +443,6 @@
                                     <i class="icon-plus"></i>
                                 </a>
                                 <h3>{{$p['titulo']}}</h3>
-                                <p>Album</p>
                                 <div class="mask"></div>
                             </div>
                         </li>
@@ -836,6 +836,7 @@
         -->
         <!-- Price section end -->
         <!-- Newsletter section start -->
+        <!--
         <div class="section third-section">
             <div class="container newsletter">
                 <div class="sub-section">
@@ -861,6 +862,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!-- Newsletter section end -->
         <!-- Contact section start -->
         <div id="contact" class="contact">

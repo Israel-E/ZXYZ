@@ -26,6 +26,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}" />
         <!-- Fav and touch icons -->
         <!--Nav-->
+
         <link rel="stylesheet" type="text/css" href="{{asset('css/normalize.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/demo.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/icons.css')}}" />
