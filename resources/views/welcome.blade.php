@@ -25,21 +25,19 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-menu"></i>
             </button>
-            <button type="button" class="btn btn-navbar">
-                
-            </button>
             <!-- Main navigation -->
 
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav" id="top-navigation">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#service">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#clients">Clients</a></li>
-                    <li><a href="#price">Price</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="trigger">Mas...</a></li>
+                    <li class="active"><a href="#home">Inicio</a></li>
+                    <li><a href="#service">Institución</a></li>
+                    <li><a href="#portfolio">Comunicacion</a></li>
+                    <li><a href="#about">Servicios Dept.</a></li>
+                    <li><a href="#clients">Juridico</a></li>
+                    <li><a href="#price">Auditoria</a></li>
+                    <li><a href="#price2">Transparencia</a></li>
+                    <li><a href="#contact">Contactos</a></li>
+                    <li><a href="#" class="trigger">Menu</a></li>
                 </ul>
             </div>
             <!--
@@ -123,7 +121,7 @@
                     <!--Simple description for section goes here. -->
                 </div>
                 <div class="row-fluid">
-                    <div class="span4">
+                    <div class="span3">
                         <div class="centered service">
                             <div class="circle-border zoom-in">
                                 <img class="img-circle" src="images/Service1.png" alt="service 1">
@@ -132,7 +130,16 @@
                             <p>We Create Modern And Clean Theme For Your Business Company.</p>
                         </div>
                     </div>
-                    <div class="span4">
+                    <div class="span3">
+                        <div class="centered service">
+                            <div class="circle-border zoom-in">
+                                <img class="img-circle" src="images/Service1.png" alt="service 1">
+                            </div>
+                            <h3>Modern Design</h3>
+                            <p>We Create Modern And Clean Theme For Your Business Company.</p>
+                        </div>
+                    </div>
+                    <div class="span3">
                         <div class="centered service">
                             <div class="circle-border zoom-in">
                                 <img class="img-circle" src="images/Service2.png" alt="service 2" />
@@ -141,7 +148,7 @@
                             <p>We Create Modern And Powerful Theme With Lots Animation And Features</p>
                         </div>
                     </div>
-                    <div class="span4">
+                    <div class="span3">
                         <div class="centered service">
                             <div class="circle-border zoom-in">
                                 <img class="img-circle" src="images/Service3.png" alt="service 3">
@@ -549,7 +556,7 @@
                     <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
                 </div>
                 <div class="row-fluid team">
-                    <div class="span4" id="first-person">
+                    <div class="span3" id="first-person">
                         <div class="thumbnail">
                             <img src="images/Team1.png" alt="team 1">
                             <h3>John Doe</h3>
@@ -576,7 +583,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="span4" id="second-person">
+                    <div class="span3" id="second-person">
                         <div class="thumbnail">
                             <img src="images/Team2.png" alt="team 1">
                             <h3>John Doe</h3>
@@ -603,7 +610,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="span4" id="third-person">
+                    <div class="span3" id="third-person">
+                        <div class="thumbnail">
+                            <img src="images/Team3.png" alt="team 1">
+                            <h3>John Doe</h3>
+                            <ul class="social">
+                                <li>
+                                    <a href="">
+                                        <span class="icon-facebook-circled"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="icon-twitter-circled"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="icon-linkedin-circled"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="mask">
+                                <h2>Photographer</h2>
+                                <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3" id="third-person">
                         <div class="thumbnail">
                             <img src="images/Team3.png" alt="team 1">
                             <h3>John Doe</h3>
@@ -788,7 +822,7 @@
         </div>
         -->
         <!-- Price section start -->
-        <!--
+
         <div id="price" class="section secondary-section">
             <div class="container">
                 <div class="title">
@@ -833,8 +867,57 @@
                 </div>
             </div>
         </div>
-        -->
+
         <!-- Price section end -->
+
+        <!-- Price2section start -->
+
+        <div id="price2" class="section secondary-section">
+            <div class="container">
+                <div class="title">
+                    <h1>Price</h1>
+                    <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                </div>
+                <div class="price-table row-fluid">
+                    <div class="span4 price-column">
+                        <h3>Basic</h3>
+                        <ul class="list">
+                            <li class="price">$19,99</li>
+                            <li><strong>Free</strong> Setup</li>
+                            <li><strong>24/7</strong> Support</li>
+                            <li><strong>5 GB</strong> File Storage</li>
+                        </ul>
+                        <a href="#" class="button button-ps">BUY</a>
+                    </div>
+                    <div class="span4 price-column">
+                        <h3>Pro</h3>
+                        <ul class="list">
+                            <li class="price">$39,99</li>
+                            <li><strong>Free</strong> Setup</li>
+                            <li><strong>24/7</strong> Support</li>
+                            <li><strong>25 GB</strong> File Storage</li>
+                        </ul>
+                        <a href="#" class="button button-ps">BUY</a>
+                    </div>
+                    <div class="span4 price-column">
+                        <h3>Premium</h3>
+                        <ul class="list">
+                            <li class="price">$79,99</li>
+                            <li><strong>Free</strong> Setup</li>
+                            <li><strong>24/7</strong> Support</li>
+                            <li><strong>50 GB</strong> File Storage</li>
+                        </ul>
+                        <a href="#" class="button button-ps">BUY</a>
+                    </div>
+                </div>
+                <div class="centered">
+                    <p class="price-text">We Offer Custom Plans. Contact Us For More Info.</p>
+                    <a href="#contact" class="button">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price2 section end -->
         <!-- Newsletter section start -->
         <!--
         <div class="section third-section">

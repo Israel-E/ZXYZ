@@ -5,8 +5,8 @@
         z-index: 1000;
     }
     .mp-level{
-        padding-bottom: 500px;
-        margin-top: 80px;
+        padding-bottom: 572px;
+        margin-top: 94px;
     }
     .gapd{
         color: #fff !important;
@@ -42,135 +42,158 @@
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-shop" href="#">Institución</a>
+                                <a class="icon icon-user" href="#">Recursos Humanos</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-shop colorfff">Institución</h2>
+                                    <h2 class="icon icon-news colorfff">Recursos Humanos</h2>
                                     <a class="mp-back" href="#">Atrás</a>
                                     <ul>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Misión-Visión</a>
+                                            <a href="#">Nomina de Autoridades</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Gobernador</a>
+                                            <a href="#">Nomina del Personal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                Dependiente</a>
                                         </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">Organigrama</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="icon icon-arrow-left">
-                                <a class="icon icon-search" href="#">Auditoría Interna</a>
-                                <div class="mp-level">
-                                    <h2 class="icon icon-news colorfff">Auditoría Interna</h2>
-                                    <a class="mp-back" href="#">Atrás</a>
-                                    <ul>
                                         <li class="icon icon-arrow-left">
-                                            <a href="#">Resumen Ejecutivo 2015</a>
+                                            <a href="#">Convocatorias</a>
                                             <div class="mp-level">
-                                                <h2>Resumen Ejecutivo 2015</h2>
+                                                <h2 class="colorfff">Convocatorias</h2>
                                                 <a class="mp-back" href="#">Atrás</a>
                                                 <ul>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Poa 2015</a></li>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Declaración Jurada 2015</a></li>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Resumen Ejecutivo Poa 2015</a></li>
+                                                    <li><a href="{{ route('construccion_pagina') }}">Modalidad de Seleccion y
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            Contratación</a></li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="icon icon-arrow-left">
-                                            <a href="#">Resumen Ejecutivo 2016</a>
-                                            <div class="mp-level">
-                                                <h2>Resumen Ejecutivo 2016</h2>
-                                                <a class="mp-back" href="#">Atrás</a>
-                                                <ul>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Poa 2015</a></li>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Declaración Jurada 2015</a></li>
-                                                    <li><a href="{{ route('construccion_pagina') }}">Resumen Ejecutivo Poa 2015</a></li>
-                                                </ul>
-                                            </div>
+                                        <li>
+                                            <a href="#">Escala Salarial</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Organigrama</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Términos de referencia y
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;perfil de cargos</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Manuales de funciones</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-note" href="#">Reglamentos y Políticas</a>
+                                <div class="mp-level">
+                                    <h2 class="icon icon-note colorfff">Reglamentos y Políticas</h2>
+                                    <a class="mp-back" href="#"> Atrás</a>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Plan Estratégicos</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Reglamentos</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Códigos</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Estatutos</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Manual de Funciones</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-note" href="#">Juridica</a>
+                                <a class="icon icon-tag" href="#">Secretarias</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-note colorfff">Juridica</h2>
+                                    <h2 class="icon icon-shop colorfff">Secretarias</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Leyes</a>
+                                            <a href="{{ route('construccion_pagina') }}">Despacho del Gobernador</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Decretos</a>
+                                            <a href="{{ route('construccion_pagina') }}">Planificación</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Obras Públicas</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Administración Financiera</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Industrialización</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Mineria y Metalurgía</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Turismo y Cultura</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Desarrollo agropecuario</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Desarrollo Humano</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Madre Tierra</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('construccion_pagina') }}">Coordinación</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-news" href="#">Unidad de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transparencia</a>
+                                <a class="icon icon-location" href="#">Departamento</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-shop colorfff">Unidad de Transparencia</h2>
+                                    <h2 class="icon icon-shop colorfff">Departamento</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">POA</a>
+                                            <a href="{{ route('construccion_pagina') }}">Municipios</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Rendición de Cuentas</a>
+                                            <a href="{{ route('construccion_pagina') }}">Alcaldes</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Convocatorias</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">Formulario de Sugerencias</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">Nomina de Personal</a>
+                                            <a href="{{ route('construccion_pagina') }}">Regiones</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-phone" href="#">Comunicación</a>
+                                <a class="icon icon-data" href="#">Unidad de Apoyo</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-shop colorfff">Comunicación</h2>
+                                    <h2 class="icon icon-shop colorfff">Unidad de Apoyo</h2>
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Noticias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Seguridad Ciudana</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Galerias</a>
+                                            <a href="{{ route('construccion_pagina') }}">Asesoria Jurídica</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Videos</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="icon icon-arrow-left">
-                                <a class="icon icon-data" href="#">Servicios &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Departamentales</a>
-                                <div class="mp-level">
-                                    <h2 class="icon icon-shop colorfff">Servicios Departamentales</h2>
-                                    <a class="mp-back" href="#"> Atrás</a>
-                                    <ul>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">SEDES</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">SEDEGES</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">SEDEDE</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('construccion_pagina') }}">SEDECA</a>
+                                            <a href="{{ route('construccion_pagina') }}">Ayuda Social</a>
                                         </li>
                                     </ul>
                                 </div>
