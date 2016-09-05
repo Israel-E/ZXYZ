@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-<?php
-namespace App;
- 
-=======
 <?php 
 
 namespace App; 
->>>>>>> origin/master
 use Zizaco\Entrust\EntrustRole;
 use Illuminate\Database\Eloquent\Model;
 class Role extends Model

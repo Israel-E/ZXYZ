@@ -6,7 +6,7 @@
     }
     .mp-level{
         padding-bottom: 572px;
-        margin-top: 94px;
+        /*margin-top: 94px;*/
     }
     .gapd{
         color: #fff !important;
@@ -127,7 +127,7 @@
                                     <a class="mp-back" href="#"> Atrás</a>
                                     <ul>
                                         <li>
-                                            <a href="{{ route('construccion_pagina') }}">Despacho del Gobernador</a>
+                                            <a href="{{ url('DespachoDelGobernador') }}">Despacho del Gobernador</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('construccion_pagina') }}">Planificación</a>

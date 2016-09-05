@@ -57,9 +57,16 @@ route::get('sss/{id}','sitiocontroller@getimgs2');
 //route pagina en construccion
 route::get('construccion', ['as'=>'construccion_pagina', 'uses' => 'ConstruccionController@index']);
 
+
 //usuarios
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('users/deshabilitar/{id}', ['uses' => 'UsersController@setDeshabilitar', 'as' => 'deshabilitar_usuario']);
 	Route::get('users/habilitar/{id}', ['uses' => 'UsersController@setHabilitar', 'as' => 'habilitar_usuario']);
 	Route::resource('users', 'UsersController');
+});
+
+
+//RUTAS con diseño para paginas aledañas
+route::get('DespachoDelGobernador', function(){
+	return view('paginas.aledanias.DespachoDelGobernador');
 });

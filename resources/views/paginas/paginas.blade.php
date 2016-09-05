@@ -7,7 +7,7 @@
     }
 </style>
 <div class="todo">
-    @include('extends.nav')
+    @include('extends.nav-welcome')
 </div>
 <div class="navbar">
     <div class="navbar-inner">

@@ -53,6 +53,7 @@ li {
 }
 
 .mp-menu {
+	margin-top: 95px;
 	position: absolute; /* we can't use fixed here :( */
 	top: 0;
 	left: 0;

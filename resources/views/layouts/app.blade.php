@@ -12,12 +12,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gobernacion</title>
         <!-- Load Roboto font -->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <!-- Load css styles -->
         <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-responsive.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/pluton.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/Simple-Sidebar.css')}}" />
         <!--[if IE 7]>
             <link rel="stylesheet" type="text/css" href="css/pluton-ie7.css" />
         <![endif]-->
@@ -70,6 +72,16 @@
             /*new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );*/
         </script>
         <!--end script nav-->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.7&appId=1503080669994271";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
          @yield('js')
     </body>
 </html>

@@ -211,6 +211,8 @@
                                 {{--<p>{!! substr($pg['contenido'], 0, 200)!!}</p>--}}
                                 <center>
                                    <button class="button button-sp"><a href="{{url('articulo/'.$pg['id'])}}">Leer Mas</a></button>
+                                   <br><br>
+                                   <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Compartir</a></div>
                                 </center>
                             </div>
                         </div>
@@ -1075,11 +1077,33 @@
             </div>
         </div>
         <div class="footer">
+                <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+                <script type="text/javascript">
+                MRP.insert({
+                'url':'http://198.50.113.170:9156/; ',
+                'codec':'mp3',
+                'volume':100,
+                'autoplay':true,
+                'buffering':5,
+                'title':'Radio Disney',
+                'wmode':'transparent',
+                'skin':'faredirfare',
+                'width':269,
+                'height':52
+                });
+                </script>
+                <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                <!---->
+
+                
+
             <p>&copy; 2013 Theme by <a href="http://www.graphberry.com">GraphBerry</a>, <a href="http://goo.gl/NM84K2">Documentation</a></p>
         </div>
         <!-- Footer section end -->
         <!-- ScrollUp button start -->
-        <div class="scrollup">
+        <div class="scrollup" style="display: block;">
             <a href="#">
                 <i class="icon-up-open"></i>
             </a>
