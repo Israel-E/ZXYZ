@@ -5,6 +5,25 @@
     .trigger{
         margin-right: 270px !important;
     }
+    .dropdown .caret {
+    margin-top: 20px;
+    margin-left: 5px;
+    }
+    .caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: top;
+        border-top: 4px solid #ffffff;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        content: "";
+    }
+    .navbar-fixed-top {
+        min-height: 0px;
+        height: 0px;
+        position: static;
+    }
 </style>
     <div id="wrapper">
 
