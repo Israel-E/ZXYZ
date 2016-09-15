@@ -70,3 +70,6 @@ Route::group(['prefix' => 'admin'], function() {
 route::get('DespachoDelGobernador', function(){
 	return view('paginas.aledanias.DespachoDelGobernador');
 });
+route::get('MisionVision', function(){
+	return view('paginas.aledanias.MisionVision');
+});

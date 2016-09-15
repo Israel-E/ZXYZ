@@ -34,6 +34,11 @@
     font-size:14px;
     line-height:20px;
 }
+
+.h3_transparencia {
+    color: #000000;
+}
+
 a {
     color:#181A1C;
     text-decoration: none;
@@ -102,14 +107,14 @@ p {
     margin-bottom: 30px;
 }
 .nav-pills > li > a {
-    background: transparent;
+    background: #004781;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     margin-right:5px;
     padding-left:25px;
     padding-right:25px;
-    border: 1px solid #181A1C;
+    border: 1px solid #cacaca;
 }
 .nav-pills > li > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
     background: #181A1C;
@@ -332,7 +337,7 @@ p {
     padding:0;
     width:32px;
     height:32px;
-    color: #FECE1A;
+    color: #cacaca;
 }
 .social li a:hover {
     color:#181A1C;
@@ -371,7 +376,7 @@ p {
     border-bottom: 1px solid #FFF;
 }
 .primary-section, .primary-section .title p, .primary-section h3 {
-    color: #FECE1A;
+    color: #cacaca;
 }
 .primary-section h1 {
     color:#FFF;
@@ -568,14 +573,14 @@ p {
 }
 .testimonial p {
     color:#181A1C;
-    background:#FECE1A;
+    background:hsla(14, 81%, 65%, 0.52);
     padding:15px;
     margin:0;
 }
 .testimonial .arrow {
     margin-left:10px;
     width:0;
-    border-top:10px solid #FECE1A;
+    border-top:10px solid hsla(14, 81%, 65%, 0.52);
     border-left: 20px outset transparent;
     border-right: 20px outset transparent;
 }
@@ -692,8 +697,8 @@ p {
  .contact {
     background: #FECE1A;
 }
-.contact h1, .contact h2, .contact h3, .contact h4, .contact h5, .contact h6, .contact .section .title > p, .contact .social > li > a {
-    color: #181A1C;
+.contact h1, .contact h2, .contact h3, .contact h4, .contact h5, .contact h6, .contact p, .contact .section .title > p, .contact .social > li > a {
+    color: #fff;
 }
 .contact textarea, .contact input[type="text"], .contact input[type="email"] {
     padding: 10px;
