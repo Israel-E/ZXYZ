@@ -1047,7 +1047,9 @@
             </div>
         </div>
         <div class="footer">
-                <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+        <center>
+                <style type="text/css">
+                </style>
                 <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
                 <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
                 <script type="text/javascript">
@@ -1066,9 +1068,7 @@
                 </script>
                 <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
                 <!---->
-
-
-
+        </center>
             <p>&copy; 2013 Theme by <a href="http://www.graphberry.com">GraphBerry</a>, <a href="http://goo.gl/NM84K2">Documentation</a></p>
         </div>
         <!-- Footer section end -->

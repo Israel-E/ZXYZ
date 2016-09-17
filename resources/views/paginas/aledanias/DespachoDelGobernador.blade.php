@@ -90,6 +90,23 @@
                             </a>
                             </span>
                         </h1>                            
+                            <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+                <script type="text/javascript">
+                MRP.insert({
+                'url':'http://198.50.113.170:9156/; ',
+                'codec':'mp3',
+                'volume':100,
+                'autoplay':true,
+                'buffering':5,
+                'title':'Radio Disney',
+                'wmode':'transparent',
+                'skin':'faredirfare',
+                'width':269,
+                'height':52
+                });
+                </script>
+                <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
                         <hr style="border: 1px solid #c0c2c4">
                         <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                         <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
