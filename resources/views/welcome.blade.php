@@ -1054,12 +1054,14 @@
                 <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
                 <script type="text/javascript">
                 MRP.insert({
-                'url':'http://198.50.113.170:9156/; ',
+                //'url':'http://198.50.113.170:9156/; ',
+                'url':'http://190.129.90.43:8000/;stream.nsv',
                 'codec':'mp3',
                 'volume':100,
                 'autoplay':true,
                 'buffering':5,
-                'title':'Radio Disney',
+                //'title':'Radio Disney',
+                'title':'Red Patria Nueva',
                 'wmode':'transparent',
                 'skin':'faredirfare',
                 'width':269,

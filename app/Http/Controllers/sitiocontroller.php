@@ -34,14 +34,20 @@ class sitiocontroller extends Controller
                 ->get();
         if(sizeof($pubgob)!=0){
             for ($i=0; $i < sizeof($pubgob) ; $i++) { 
+
                 $imgfirst = \DB::table('multimedia')//obtenemos la primera imagen
                     ->select('nombre_multimedia','tipo')
                     ->where('id_publicacion',$pubgob[$i]->id)
                     ->where('tipo','imagen')
                     ->first();
                 //agregamos el atributo al objeto
-                $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));
-                $pubgob[$i]->tipo=$imgfirst->tipo;
+                if(sizeof($imgfirst) > 0){
+                    $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));
+                    $pubgob[$i]->tipo=$imgfirst->tipo;
+                    $pubgob[$i]->pagina = sitio::find($pubgob[$i]->sitio_id)->nombre_sitio;
+                }
+                $pubgob[$i]->img='no imagen';
+                $pubgob[$i]->tipo='no imagen';
                 $pubgob[$i]->pagina = sitio::find($pubgob[$i]->sitio_id)->nombre_sitio;
             }
          }

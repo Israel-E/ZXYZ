@@ -6,8 +6,9 @@
         color: #fff;
     }
 </style>
+
 <div class="todo">
-    @include('extends.nav-welcome')
+    @include('extends.nav')
 </div>
 <div class="navbar">
     <div class="navbar-inner">
@@ -33,7 +34,7 @@
                     <li><a href="#clients">Clients</a></li>
                     <li><a href="#price">Price</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="trigger">Mas...</a></li>
+                    <li><a href="#" class="trigger" id="menu_y">Menu</a></li>
                 </ul>
             </div>
             <!-- End main navigation -->

@@ -149,6 +149,7 @@ class publicacioncontroller extends Controller
     }
 
     public function editarpub($id){
+        
         $id = $this->desencriptar($id);
         //enviamos los requisitos que tiene la pagina de post publicacion
         $fecha_inicio = date("Y-m-d");//enviamos fecha  actual servidor de inicio de gestion

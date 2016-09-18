@@ -195,6 +195,21 @@
                                         <li>
                                             <a href="{{ route('construccion_pagina') }}">Ayuda Social</a>
                                         </li>
+                                        @foreach($sitios as $s)
+                                            <li><a href="{{url('sitio/'.$s['id'])}}">{{$s['nombre_sitio']}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-data" href="#">Paginas</a>
+                                <div class="mp-level">
+                                    <h2 class="icon icon-shop colorfff">Paginas</h2>
+                                    <a class="mp-back" href="#"> Atrás</a>
+                                    <ul>
+                                        @foreach($sitios as $s)
+                                            <li><a href="{{url('sitio/'.$s['id'])}}">{{$s['nombre_sitio']}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </li>
