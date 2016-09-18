@@ -37,6 +37,7 @@ class sitiocontroller extends Controller
                 $imgfirst = \DB::table('multimedia')//obtenemos la primera imagen
                     ->select('nombre_multimedia','tipo')
                     ->where('id_publicacion',$pubgob[$i]->id)
+                    ->where('tipo','imagen')
                     ->first();
                 //agregamos el atributo al objeto
                 $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));

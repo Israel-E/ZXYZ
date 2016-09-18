@@ -168,7 +168,6 @@ class publicacioncontroller extends Controller
 
         //recuperamos la publicacion
         $publicacion = publicaciones::find($id);
-
         //recuperamos los sitios donde fue publicado
         $sti = Array();
         $sitios_publicados = \DB::table('publicaciones_sitio')
@@ -177,7 +176,7 @@ class publicacioncontroller extends Controller
                 ->get();
 
         for ($i=0; $i < sizeof($sitios_publicados) ; $i++) { 
-            $sti[$i]=$sitios_publicados[$i]->sitio_id;
+            $sti[$i]=$this->encriptar($sitios_publicados[$i]->sitio_id);
         }        
         $publicacion->sitios=$sti;
         
@@ -188,8 +187,8 @@ class publicacioncontroller extends Controller
 
         //categoria de publicacion
         $categoria = categoria::find($publicacion->id_tipo);
-        $publicacion->categoria=$categoria->categoria;
-
+        $publicacion->categoria=array("id"=>$this->encriptar($categoria->id));
+        
         //recuperamos  multimedia de la publicacion
         $mult = Array();
         $pub_multimedia = \DB::table('multimedia')
@@ -198,12 +197,106 @@ class publicacioncontroller extends Controller
                 ->get();
 
         for ($i=0; $i < sizeof($pub_multimedia) ; $i++) { 
-            $mult[$i]=$pub_multimedia[$i]->nombre_multimedia;
+            if($pub_multimedia[$i]->tipo == 'imagen'){
+                $img = base64_encode(\Storage::disk('imagenes')->get($pub_multimedia[$i]->nombre_multimedia));
+                $mult[$i]=array("id"=>$this->encriptar($pub_multimedia[$i]->id), "multimedia"=>$img, "tipo"=>$pub_multimedia[$i]->tipo);
+            }
+            else{
+                $mult[$i]=array("id"=>$this->encriptar($pub_multimedia[$i]->id), "multimedia"=>$pub_multimedia[$i]->nombre_multimedia, "tipo"=>$pub_multimedia[$i]->tipo);
+            }
+            
+            
         }
         $publicacion->multimedia=$mult;
         ////-////-///-///-//-/
+
         $publicacion = $publicacion->toArray();//retornamos todo en un array;
-        //return var_dump($publicacion);
+        $id_pub = $publicacion['id'] = $this->encriptar($publicacion['id']);
+        //return dd();
+        //return dd($publicacion);
         return view('publicacion.editarpublicacion',['publicacion'=>$publicacion,'sitios'=>$sitios,'categorias'=>$categorias,'fecha_inicio'=>$fecha_inicio,'fecha_fin'=>$fecha_fin]);
+    }
+
+    public function eliminar_foto($id,$id_p){
+        $id = $this -> desencriptar($id);
+        $id_p = $this -> desencriptar($id_p);
+        //return $id.'   '.$id_p;
+        \DB::table('multimedia')->where('id', $id)->delete();
+        $mult = Array();
+        $multimedia = \DB::table('multimedia')
+                ->select('*')
+                ->where('id_publicacion',$id_p)
+                ->get();
+
+        for ($i=0; $i < sizeof($multimedia) ; $i++) { 
+            if($multimedia[$i]->tipo == 'imagen'){
+                $img = base64_encode(\Storage::disk('imagenes')->get($multimedia[$i]->nombre_multimedia));
+                $mult[$i]=array("id_p"=>$this->encriptar($id_p), "id"=>$this->encriptar($multimedia[$i]->id), "multimedia"=>$img, "tipo"=>$multimedia[$i]->tipo);
+            }
+            else{
+                $mult[$i]=array("id_p"=>$this->encriptar($id_p),"id"=>$this->encriptar($multimedia[$i]->id), "multimedia"=>$multimedia[$i]->nombre_multimedia, "tipo"=>$multimedia[$i]->tipo);
+            }            
+        }
+        return $mult;
+    }
+
+    public function editpub(Request $request){
+        $id_publicacion = $this -> desencriptar($request->input('rca'));
+        //return dd($request->sitios);
+        $p = publicaciones::find($id_publicacion);
+        $p->titulo = $request->input('titulo');
+        $p->contenido = $request->input('contenido');
+        $p->fecha_publicacion =$request->input('fecha_inicio');
+        $p->fecha_caducidad= $request->input('fecha_fin');
+        $p->id_tipo=$this->desencriptar($request->input('categoria'));
+        $p->id_usuario=\Auth::user()->id;
+        $p->save();//hasta aqui guardamos en la tabla publicaciones
+
+         //guardamos relaciones de muchos a muchos con la tabla sitios
+        $sitios = Array();
+        for ($i=0; $i < sizeof($request->sitios); $i++) {
+            $sitios[$i] = $this->desencriptar($request->sitios[$i]);
+        }
+        $p->sitios()->sync($sitios);
+
+        //guardamos relacion uno a muchos publiacion -> multimedia(imagenes)
+        $Ult_publicacion= publicaciones::all();//obtenemos las publicaciones
+        //return dd($Ult_publicacion->last()->id);
+        //
+        //return "hola";
+        
+        if (sizeof($request->file) > 1) {
+            for ($i=0; $i < sizeof($request->file) ; $i++) { 
+                //obtenemos el campo file definido en el formulario
+               $file = $request->file[$i];
+               //cambiamos el nombre de la imagen para tener un registro unico
+               $nombre = Carbon::now()->timestamp.''.$this->nombrealeatorio().'.'. $file->getClientOriginalExtension();
+               //indicamos que queremos guardar un nuevo archivo en el disco local imagenes
+               \Storage::disk('imagenes')->put($nombre,  \File::get($file));
+               $m = new multimedia;
+               $m->nombre_multimedia = $nombre;
+               $m->tipo='imagen';
+               $m->id_publicacion=$Ult_publicacion->last()->id;
+               $m->save();
+            }
+        }
+        
+        if (sizeof($request->input('video')) > 1) {
+            if($request->input('videos') == "Yes")
+            {
+                $videos = $request->input('video');
+                //return ($videos);
+                foreach ($videos as $video) 
+                {
+                    $url = $video;
+                    $m = new multimedia;
+                    $m->nombre_multimedia = $url;
+                    $m->tipo='video';
+                    $m->id_publicacion=$Ult_publicacion->last()->id;
+                    $m->save();
+                }
+            }
+        }
+        return 'Edicion Existoso';
     }
 }

@@ -43,7 +43,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('control-pagina/{id}',['as'=>'control_pagina','uses'=>'publicacioncontroller@controlpaginas']);
     Route::get('pb-estado/{id}/{id_pagina}','publicacioncontroller@estadopublicacion');
     Route::get('pb-editar/{id}','publicacioncontroller@editarpub');
-    Route::post('editpub', ['as' => 'postimgs', 'uses' => 'publicacioncontroller@editpub']);
+    Route::post('editpub', ['as' => 'editar_publicacion', 'uses' => 'publicacioncontroller@editpub']);
+    Route::get('eliminar_foto/{id}/{id_p}','publicacioncontroller@eliminar_foto');
 
 });
 

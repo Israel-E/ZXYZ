@@ -28,6 +28,7 @@ class welcomecontroller extends Controller
             $imgfirst = \DB::table('multimedia')//obtenemos la primera imagen
                 ->select('nombre_multimedia','tipo')
                 ->where('id_publicacion',$pubgob[$i]->id)
+                ->where('tipo','imagen')
                 ->first();
             if (\Storage::disk('imagenes')->exists($imgfirst->nombre_multimedia)===false) {
                 return "error no se encuentra la imagen ".$imgfirst->nombre_multimedia;
