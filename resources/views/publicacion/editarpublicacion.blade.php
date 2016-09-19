@@ -1,6 +1,7 @@
 
 <div class="row">
   <div class="col-lg-12 col-xs-12">
+  <div id="form-errors"></div >
  <form method="post" id="formulario" enctype="multipart/form-data" action="{{ route('editar_publicacion') }}" >
  {{ csrf_field() }}
  <input type="hidden" value="{{$publicacion['id']}}" name="rca">
@@ -91,7 +92,7 @@
     </div>
       <div id="contenedor">
           <div>
-              <input type="text" id="video" class="form-control previsualizar" name = "video[]" placeholder="Url del video">
+              <input type="text" id="video" class="form-control previsualizar" name = "video_upload[]" placeholder="Url del video">
               <div id="vista-previa-video0" class="eliminar-imagen"></div>
           </div>
       </div>
@@ -147,7 +148,7 @@ var z=1;
        });
 
          $("body").on("change",".previsualizar", function (e) {
-             var archivo = document.getElementsByName('video[]');
+             var archivo = document.getElementsByName('video_upload[]');
              //alert(archivo.length);
              for(var j = 0; j<archivo.length; j++)
              {
@@ -181,7 +182,7 @@ var z=1;
              $(AddButton).click(function () {
                  FieldCount++;
                  //$(contenedor).append('<div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="fecha">Fecha</label><input class="form-control" id="fecha_' + FieldCount + '" name="fecha_' + FieldCount + '" type="date"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_ent">Hora entrada</label><input type="time" name="hora_ent_' + FieldCount + '" class="form-control" id="hora_ent_' + FieldCount + '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="hora_sal">Hora salida</label><input type="time" name="hora_sal_' + FieldCount + '" class="form-control" id="hora_sal_' + FieldCount+ '"></div><div class="form-group col-md-3 col-sm-6 col-xs-12"><label for="ubicacion">Ubicación</label><textarea class="form-control" placeholder="Por favor introduzca la ubicación" rows="2" id="ubicacion_' + FieldCount + '" name="ubicacion_' + FieldCount + '" cols="50"></textarea></div>');
-                 $(contenedor).append('<div><input type="text" id="video" class="form-control previsualizar" name = "video[]" placeholder="Url del video"><div id="vista-previa-video' + z + '"></div><a href="#" class="eliminar">&times;</a></div>');
+                 $(contenedor).append('<div><input type="text" id="video" class="form-control previsualizar" name = "video_upload[]" placeholder="Url del video"><div id="vista-previa-video' + z + '"></div><a href="#" class="eliminar">&times;</a></div>');
                  //console.log(FieldCount);
                  z++;
              });
@@ -207,18 +208,35 @@ var z=1;
               data: new FormData(this),
               processData: false,
               contentType: false,
+              cache: false,
               // Mostramos un mensaje con la respuesta de PHP
               success: function(data) {
                   $('#respuesta').html(data);
+                  window.location.href = "{{url('home')}}";
+              },
+              error:function(xhr, status, error) {
+
+                $("#form-errors").show("swing");
+                //swal("Cancelado", "Lo sentimos algo se encuentra mal en su entrada", "error");
+                var errors = xhr.responseJSON;
+                //console.log(errors);
+                errorsHtml = '<div class="alert alert-danger"><strong>Whoops!</strong> Hubo algunos problemas con su entrada.<br><br><ul style="padding-left:30px;">';
+                $.each( errors , function( key, value ) {
+                    errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
+                });
+                errorsHtml += '</ul></di>';
+                $( '#form-errors' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
               }
           })        
           return false;
       });
 
       $("body").on("click",".eliminar_foto", function (e) {
+          e.preventDefault();
           $.ajax({
               type: 'GET',
               url: $(this).attr('href'),
+              cache: false,
               success: function(data) {       
                   
                   //return false;        
@@ -241,8 +259,10 @@ var z=1;
                     );
                     $( "#multimedia" ).append(newdiv);
                   }
+                  $('#respuesta').html(data);
+
               }
-          })        
+          })
           return false;
       });
        

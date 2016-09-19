@@ -27,6 +27,44 @@ class publicacioncontroller extends Controller
     }
 
     public function postimgs(Request $request){//encriptado y desencriptado
+        //return dd($request->input('video'));
+        if($request->input('videos') == "Yes")
+        {
+            //return $request->input('videos');
+            $rules = array(
+                  'titulo'  => 'required|max:250|min:5|unique:publicaciones',
+                  'contenido'     => 'required|min:5',
+                  'fecha_inicio'     => 'required|date|after:yesterday',
+                  'fecha_fin'   => 'required|date|after:fecha_inicio',
+                  'categoria'   => 'required',
+                  'sitios'   => 'required',
+                  'video_upload' => 'required',
+                  'file'   => 'required',
+                  
+            );
+            $this->validate($request, $rules);
+            
+           
+        }
+        if($request->input('videos') == null)
+        {
+            //return $request->input('videos');
+            $rules = array(
+              'titulo'  => 'required|max:250|min:5|unique:publicaciones',
+              'contenido'     => 'required|min:5',
+              'fecha_inicio'     => 'required|date|after:yesterday',
+              'fecha_fin'   => 'required|date|after:fecha_inicio',
+              'categoria'   => 'required',
+              'sitios'   => 'required',
+              'file'   => 'required',
+            );
+            $this->validate($request, $rules);   
+            
+        }
+      
+        
+        //return 'todo bien';
+
         $p = new publicaciones;
         $p->titulo = $request->input('titulo');
         $p->contenido = $request->input('contenido');
@@ -41,7 +79,11 @@ class publicacioncontroller extends Controller
             $p->sitios()->attach($this->desencriptar($request->sitios[$i]));
         }
         //guardamos relacion uno a muchos publiacion -> multimedia(imagenes)
-        $Ult_publicacion= publicaciones::all();//obtenemos las publicaciones
+        //$Ult_publicacion= publicaciones::all();//obtenemos las publicaciones
+        $Ult_publicacion = \DB::table('publicaciones')
+                ->select('*')
+                ->where('titulo',$request->input('titulo'))
+                ->get(); 
         //return dd($Ult_publicacion->last()->id);
         //
         //return "hola";
@@ -55,13 +97,13 @@ class publicacioncontroller extends Controller
            $m = new multimedia;
            $m->nombre_multimedia = $nombre;
            $m->tipo='imagen';
-           $m->id_publicacion=$Ult_publicacion->last()->id;
+           $m->id_publicacion=$Ult_publicacion[0]->id;
            $m->save();
         }
 
         if($request->input('videos') == "Yes")
         {
-            $videos = $request->input('video');
+            $videos = $request->input('video_upload');
             //return ($videos);
             foreach ($videos as $video) 
             {
@@ -69,7 +111,7 @@ class publicacioncontroller extends Controller
                 $m = new multimedia;
                 $m->nombre_multimedia = $url;
                 $m->tipo='video';
-                $m->id_publicacion=$Ult_publicacion->last()->id;
+                $m->id_publicacion=$Ult_publicacion[0]->id;
                 $m->save();
             }
         }
@@ -220,9 +262,13 @@ class publicacioncontroller extends Controller
 
     public function eliminar_foto($id,$id_p){
         $id = $this -> desencriptar($id);
+        $image = multimedia::find($id);     
         $id_p = $this -> desencriptar($id_p);
         //return $id.'   '.$id_p;
         \DB::table('multimedia')->where('id', $id)->delete();
+        if($image->tipo === 'imagen'){
+            \Storage::disk('imagenes')->delete($image->nombre_multimedia);
+        }
         $mult = Array();
         $multimedia = \DB::table('multimedia')
                 ->select('*')
@@ -239,10 +285,47 @@ class publicacioncontroller extends Controller
             }            
         }
         return $mult;
+        /*return 'boorado';*/
     }
 
     public function editpub(Request $request){
+
+        //return sizeof($request->input('video_upload'));
         $id_publicacion = $this -> desencriptar($request->input('rca'));
+        if($request->input('videos') == "Yes")
+        {
+            //return $request->input('videos');
+            $rules = array(
+                  'titulo'  =>  'required|unique:publicaciones,titulo,'.$id_publicacion.'|max:150|min:5',
+                  'contenido'     => 'required|min:5',
+                  'fecha_inicio'     => 'required|date|after:yesterday',
+                  'fecha_fin'   => 'required|date|after:fecha_inicio',
+                  'categoria'   => 'required',
+                  'sitios'   => 'required',
+                  //'video_upload' => 'required',
+                  //'file'   => 'required',
+                  
+            );
+            $this->validate($request, $rules);
+            
+           
+        }
+        if($request->input('videos') == null)
+        {
+            //return $request->input('videos');
+            $rules = array(
+              'titulo'  =>  'required|unique:publicaciones,titulo,'.$id_publicacion.'|max:150|min:5',
+              'contenido'     => 'required|min:5',
+              'fecha_inicio'     => 'required|date|after:yesterday',
+              'fecha_fin'   => 'required|date|after:fecha_inicio',
+              'categoria'   => 'required',
+              //'sitios'   => 'required',
+              //'file'   => 'required',
+            );
+            $this->validate($request, $rules);   
+            
+        }
+        
         //return dd($request->sitios);
         $p = publicaciones::find($id_publicacion);
         $p->titulo = $request->input('titulo');
@@ -261,12 +344,16 @@ class publicacioncontroller extends Controller
         $p->sitios()->sync($sitios);
 
         //guardamos relacion uno a muchos publiacion -> multimedia(imagenes)
-        $Ult_publicacion= publicaciones::all();//obtenemos las publicaciones
+        //$Ult_publicacion= publicaciones::all();//obtenemos las publicaciones
+        $Ult_publicacion = \DB::table('publicaciones')
+                ->select('*')
+                ->where('titulo',$request->input('titulo'))
+                ->get(); 
         //return dd($Ult_publicacion->last()->id);
         //
         //return "hola";
         
-        if (sizeof($request->file) > 1) {
+        if (sizeof($request->file) >= 1 && $request->file[0] != null) {
             for ($i=0; $i < sizeof($request->file) ; $i++) { 
                 //obtenemos el campo file definido en el formulario
                $file = $request->file[$i];
@@ -277,15 +364,15 @@ class publicacioncontroller extends Controller
                $m = new multimedia;
                $m->nombre_multimedia = $nombre;
                $m->tipo='imagen';
-               $m->id_publicacion=$Ult_publicacion->last()->id;
+               $m->id_publicacion=$Ult_publicacion[0]->id;
                $m->save();
             }
         }
         
-        if (sizeof($request->input('video')) > 1) {
+        if (sizeof($request->input('video_upload')) >= 1 && $request->input('video_upload')!=null) {
             if($request->input('videos') == "Yes")
             {
-                $videos = $request->input('video');
+                $videos = $request->input('video_upload');
                 //return ($videos);
                 foreach ($videos as $video) 
                 {
@@ -293,7 +380,7 @@ class publicacioncontroller extends Controller
                     $m = new multimedia;
                     $m->nombre_multimedia = $url;
                     $m->tipo='video';
-                    $m->id_publicacion=$Ult_publicacion->last()->id;
+                    $m->id_publicacion=$Ult_publicacion[0]->id;
                     $m->save();
                 }
             }
