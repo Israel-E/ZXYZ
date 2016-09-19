@@ -30,16 +30,17 @@ class welcomecontroller extends Controller
                 ->where('id_publicacion',$pubgob[$i]->id)
                 ->where('tipo','imagen')
                 ->first();
-            if(sizeof($imgfirst)>0){
+                if(sizeof($imgfirst)>0){
                     if (\Storage::disk('imagenes')->exists($imgfirst->nombre_multimedia)===false) {
-                    return "error no se encuentra la imagen ".$imgfirst->nombre_multimedia;
+                        return "error no se encuentra la imagen ".$imgfirst->nombre_multimedia;
+                    }
+                    //agregamos el atributo al objeto
+                    $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));
+                    $pubgob[$i]->tipo=$imgfirst->tipo;
+                }else{
+                    $pubgob[$i]->img='no img';
+                    $pubgob[$i]->tipo='no img';
                 }
-                //agregamos el atributo al objeto
-                $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));
-                $pubgob[$i]->tipo=$imgfirst->tipo;
-            }
-            $pubgob[$i]->img='no img';
-            $pubgob[$i]->tipo='no img';
         }
 
         $pubgob = $pubgob->toArray();

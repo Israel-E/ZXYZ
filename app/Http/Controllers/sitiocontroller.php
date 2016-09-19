@@ -45,10 +45,12 @@ class sitiocontroller extends Controller
                     $pubgob[$i]->img=base64_encode(\Storage::disk('imagenes')->get($imgfirst->nombre_multimedia));
                     $pubgob[$i]->tipo=$imgfirst->tipo;
                     $pubgob[$i]->pagina = sitio::find($pubgob[$i]->sitio_id)->nombre_sitio;
+                }else{
+                    $pubgob[$i]->img='no imagen';
+                    $pubgob[$i]->tipo='no imagen';
+                    $pubgob[$i]->pagina = sitio::find($pubgob[$i]->sitio_id)->nombre_sitio;
                 }
-                $pubgob[$i]->img='no imagen';
-                $pubgob[$i]->tipo='no imagen';
-                $pubgob[$i]->pagina = sitio::find($pubgob[$i]->sitio_id)->nombre_sitio;
+                
             }
          }
          else{
